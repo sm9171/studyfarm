@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { useRouter } from "next/router";
 
-import styled from "styled-components";
 import {
   Form,
   Typography,
@@ -20,8 +19,8 @@ function IndexPage() {
   const router = useRouter();
 
   const [loginLoading, setLoginLoading] = useState(false);
-  const [email, onChangeEmail] = useInput("");
-  const [password, onChangePassword] = useInput("");
+  const [email, onChangeEmail] = useInput("doqndnffo6@gmail.com");
+  const [password, onChangePassword] = useInput("tjdghks1!");
 
   const onSubmit = useCallback(async () => {
     setLoginLoading(true);
@@ -29,12 +28,16 @@ function IndexPage() {
     console.log(data, error);
     setLoginLoading(false);
     if (data) {
-      message.success("로그인에 성공하였습니다.");
-      setTimeout(() => {
-        router.push("/");
-      }, 1000);
-    } else {
-      message.error(error.message);
+      if (data.code === 200) {
+        message.success("로그인에 성공하였습니다.");
+        setTimeout(() => {
+          router.push("/");
+        }, 1000);
+      }
+    } else if (error) {
+      if (error.code === 400) {
+        message.error(error.message);
+      }
     }
   }, [email, password]);
 
@@ -83,7 +86,3 @@ function IndexPage() {
 }
 
 export default IndexPage;
-
-const FatText = styled.div``;
-
-const SubText = styled.div``;

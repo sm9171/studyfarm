@@ -16,8 +16,8 @@ export const onLogin = async (email: string, password: string) => {
       password,
     };
     const res = await api.post<APIResponse>(`/auth/login`, data);
-    return [res.data, null];
+    return [res.data as APIResponse, null];
   } catch (err) {
-    return [null, err.response.data];
+    return [null, err.response.data as APIResponse];
   }
 };
