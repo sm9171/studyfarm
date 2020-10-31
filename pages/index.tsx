@@ -1,14 +1,7 @@
-import React from 'react';
-import Head from 'next/head';
-import AppLayout from '../components/AppLayout';
+import React from "react";
 
-const Home = () => (
-  <AppLayout>
-    <Head>
-      <title>NodeBird</title>
-    </Head>
-    <div>Hello, Next!</div>
-  </AppLayout>
-);
+import AuthHome from "./auth";
+
+const Home = () => <AuthHome />;
 
 export default Home;

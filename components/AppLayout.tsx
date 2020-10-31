@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import Link from "next/link";
-import { Menu, Input, Button } from "antd";
+import { Menu, Input } from "antd";
 import PropTypes from "prop-types";
 
 interface AppLayoutProps {
