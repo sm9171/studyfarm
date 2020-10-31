@@ -21,3 +21,15 @@ export const onLogin = async (email: string, password: string) => {
     return [null, err.response.data];
   }
 };
+
+export const onEmailauth = async (email: string) => {
+  try {
+    const data = {
+      email
+    };
+    const res = await api.post<APIResponse>(`/auth/login`, data);
+    return [res.data, null];
+  } catch (err) {
+    return [null, err.response.data];
+  }
+};

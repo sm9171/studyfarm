@@ -1,0 +1,24 @@
+export type Study = {
+  study_seq: number;
+  title: string;
+  users_seq: number;
+  name: string;
+  age: number;
+  user_created_at: string;
+  user_updated_at: string;
+  study_limit: number;
+  week: number;
+  week_type: number;
+  local: number;
+  addr: number;
+  contents: string;
+  color: string;
+  end_yn: false;
+  study_day: number;
+  users: any;
+  dateFormat: string;
+  study_created_at_str: string;
+  study_updated_at_str: string;
+  state: string;
+  city: string;
+};
