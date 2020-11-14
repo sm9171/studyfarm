@@ -9,10 +9,11 @@ interface StudyListProp {
 }
 
 function StudyList({ studies }: StudyListProp) {
+  console.log(studies);
   return (
     <Container>
       {studies.map((study) => (
-        <StudyContainer>
+        <StudyContainer key={study.study_seq}>
           <StudyItem study={study} />
         </StudyContainer>
       ))}

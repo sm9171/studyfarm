@@ -1,5 +1,5 @@
 import React from "react";
-
+import { AiOutlineUser, AiOutlineCalendar } from "react-icons/ai";
 import styled from "styled-components";
 import { StudyType } from "../../lib/types/study";
 
@@ -15,8 +15,12 @@ function StudyItem({ study }: StudyItemProps) {
         <Subtitle>{study.simple_introduce}</Subtitle>
       </MainInfo>
       <SubInfo>
+        <AiOutlineUser />
         <Nickname>{study.nickname}</Nickname>
-        <Members>{study.study_limit}</Members>
+        <Members>
+          {study.users.length}/{study.study_limit}
+        </Members>
+        <AiOutlineCalendar />
         <StudyTime>매주, 토</StudyTime>
       </SubInfo>
       <Tags>
@@ -70,6 +74,7 @@ const MainInfo = styled.div``;
 
 const SubInfo = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const CreatedTime = styled.div`
