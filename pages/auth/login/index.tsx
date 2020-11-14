@@ -12,6 +12,7 @@ import {
 } from "antd";
 import useInput from "../../../hooks/useInput";
 import { onLogin } from "../../../lib/api/auth";
+import { setUser } from "../../../lib/utils";
 
 const { Text } = Typography;
 
@@ -25,14 +26,18 @@ function IndexPage() {
   const onSubmit = useCallback(async () => {
     setLoginLoading(true);
     const [data, error] = await onLogin(email, password);
-    console.log(data, error);
     setLoginLoading(false);
     if (data) {
       if (data.code === 200) {
-        message.success("로그인에 성공하였습니다.");
-        setTimeout(() => {
-          router.push("/");
-        }, 1000);
+        if (data.result.user.user_active) {
+          message.success("로그인에 성공하였습니다.");
+          setUser(data.result);
+          setTimeout(() => {
+            router.push("/");
+          }, 1000);
+        } else {
+          message.error("이메일 인증을 해주세요!");
+        }
       }
     } else if (error) {
       if (error.code === 400) {

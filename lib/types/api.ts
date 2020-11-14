@@ -1,4 +1,4 @@
-export type APIResponse = {
+export type APIResponseType = {
   code: number;
   message: string;
   result: any;
