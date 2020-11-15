@@ -22,12 +22,18 @@ export const onLogin = async (email: string, password: string) => {
   }
 };
 
-export const onEmailauth = async (email: string) => {
+export const authEmail = async (email: string) => {
   try {
-    const data = {
-      email
-    };
-    const res = await api.post<APIResponse>(`/auth/login`, data);
+    const res = await api.get<APIResponse>(`/user/check-email/${email}`);
+    return [res.data, null];
+  } catch (err) {
+    return [null, err.response.data];
+  }
+};
+
+export const authNickname = async (nickname: string) => {
+  try {
+    const res = await api.get<APIResponse>(`/user/check-nickname?nickname=` + nickname);
     return [res.data, null];
   } catch (err) {
     return [null, err.response.data];
