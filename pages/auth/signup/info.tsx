@@ -5,7 +5,7 @@ import useInput from '../../../hooks/useInput';
 import { authNickname, authEmail } from '../../../lib/api/auth';
 import Router, { withRouter } from "next/router";
 
-function InfoTemplate() {
+function InfoPage() {
 
   return (
     <>
@@ -16,4 +16,4 @@ function InfoTemplate() {
   );
 }
 
-export default InfoTemplate;
+export default InfoPage;

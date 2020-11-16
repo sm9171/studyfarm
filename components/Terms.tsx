@@ -1,9 +1,8 @@
 import React from "react";
 import { Checkbox, Divider } from 'antd';
-
 const CheckboxGroup = Checkbox.Group;
 
-const plainOptions = ['1', '2', '3'];
+const plainOptions = ['[필수]1', '[필수]2', '[필수]3'];
 
 function Terms() {
     const [checkedList, setCheckedList] = React.useState(['']);
@@ -14,6 +13,7 @@ function Terms() {
         setCheckedList(list);
         setIndeterminate(!!list.length && list.length < plainOptions.length);
         setCheckAll(list.length === plainOptions.length);
+
     };
 
     const onCheckAllChange = (e: any) => {
