@@ -1,5 +1,6 @@
 import axios from "axios";
-import { APIResponse } from "../types/api";
+import { APIResponseType } from "../types/api";
+import { UserResponseType } from "../types/auth";
 
 const api = axios.create({
   baseURL: "http://3.214.168.45:8080/api/v1",
@@ -15,10 +16,10 @@ export const onLogin = async (email: string, password: string) => {
       email,
       password,
     };
-    const res = await api.post<APIResponse>(`/auth/login`, data);
-    return [res.data, null];
+    const res = await api.post<APIResponseType>(`/auth/login`, data);
+    return [res.data as UserResponseType, null];
   } catch (err) {
-    return [null, err.response.data];
+    return [null, err.response.data as UserResponseType];
   }
 };
 

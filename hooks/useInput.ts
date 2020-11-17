@@ -1,9 +1,13 @@
-import { useState, useCallback } from "react";
+import { useCallback, useState } from "react";
 
-export default (initValue: string): [value: string, handler: (e: React.ChangeEvent<HTMLInputElement>) => void] => {
-  const [value, setter] = useState(initValue);
-  const handler = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setter(e.target.value);
+export default function useInput(
+  initialValue: string = ""
+): [value: string, handle: (e: React.ChangeEvent<HTMLInputElement>) => void] {
+  const [value, setValue] = useState(initialValue);
+
+  const handle = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
   }, []);
-  return [value, handler];
-};
+
+  return [value, handle];
+}
