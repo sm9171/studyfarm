@@ -9,8 +9,11 @@ function InfoPage() {
 
   return (
     <>
-      <h1>기본 정보</h1>
-      <h2>스터디팜과 공유할 회원님의 정보를 알려주세요.</h2>
+      <h1>어떤 스터디를 찾고 있나요?</h1>
+      <h2>입력하신 정보로 스터디를 찾을 수 있습니다.</h2>
+      <h2>지역 정보는 다른 사람들에게 공유되지 않습니다.</h2>
+      <h3>지역</h3>
+      <h3>관심 스터디</h3>
       <Button type="primary" htmlType="submit" loading={false}>다음</Button>
     </>
   );
