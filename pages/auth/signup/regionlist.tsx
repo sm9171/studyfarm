@@ -1,0 +1,25 @@
+import React, { useCallback, useState } from "react";
+import styled from 'styled-components';
+import { Input, Button } from 'antd';
+import useInput from '../../../hooks/useInput';
+import Router, { withRouter } from "next/router";
+const { Search } = Input;
+function InfoPage() {
+
+  const onSearch = (value: String) => console.log(value);
+  return (
+    <>
+      <h1>스터디 관심지역 선택</h1>
+      <Search placeholder="input search text" onSearch={onSearch} enterButton />
+      <h2>지역 정보는 다른 사람들에게 공유되지 않습니다.</h2>
+
+      <h3>지역</h3>
+
+      <h3>관심 스터디</h3>
+
+      <Button type="primary" htmlType="submit" loading={false}>곧 다왔어요!</Button>
+    </>
+  );
+}
+
+export default InfoPage;

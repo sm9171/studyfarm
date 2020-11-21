@@ -5,7 +5,7 @@ import { Input, Button, Form, message, Modal } from 'antd';
 
 import useInput from '../../../hooks/useInput';
 import { authNickname, authEmail } from '../../../lib/api/auth';
-import Terms from "../../../components/Terms";
+import Terms from "../../../components/Signup/Terms";
 
 function SignupPage() {
 
