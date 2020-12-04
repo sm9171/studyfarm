@@ -2,6 +2,7 @@
 import type { AppProps /*, AppContext */ } from "next/app";
 import Head from "next/head";
 import "antd/dist/antd.css";
+import GlobalStyles from "../styles/globalStyles";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -9,6 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>스터디팜</title>
       </Head>
+      <GlobalStyles />
       <Component {...pageProps} />
     </>
   );

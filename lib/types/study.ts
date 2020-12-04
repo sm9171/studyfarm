@@ -79,3 +79,24 @@ export interface StudiesResponseType {
   result: StudiesResultType;
   responseTime: string;
 }
+
+export interface StudyResponseType {
+  code: number;
+  message: string;
+  result: StudyType;
+  responseTime: string;
+}
+
+export interface CreateStudyType {
+  title: string;
+  study_limit: number;
+  week: string;
+  week_type: number;
+  state: number;
+  city: number;
+  contents: string;
+  category: number;
+  topic: number;
+  color: string;
+  study_day: number;
+}
