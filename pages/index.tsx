@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import StudyList from "../components/Study/StudyList";
 import { getStudies } from "../lib/api/study";
 import { StudyType } from "../lib/types/study";
-import { getUser } from "../lib/utils";
 
 const Home = () => {
   const [studies, setStudies] = useState<StudyType[]>([]);

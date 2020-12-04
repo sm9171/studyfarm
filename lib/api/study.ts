@@ -24,6 +24,19 @@ export const getStudies = async () => {
   }
 };
 
+export const getStudy = async (seq: number) => {
+  try {
+    const res = await api.get<APIResponseType>(`/study/${seq}`, {
+      headers: {
+        Authorization: `Bearer ${getUser()?.token}`,
+      },
+    });
+    return [res.data as StudyResponseType, null];
+  } catch (err) {
+    return [null, err.response.data as StudyResponseType];
+  }
+};
+
 export const createStudy = async (study: CreateStudyType) => {
   try {
     const res = await api.post("/study", study, {

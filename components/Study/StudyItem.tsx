@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { AiOutlineUser, AiOutlineCalendar } from "react-icons/ai";
 import styled from "styled-components";
@@ -8,8 +9,14 @@ interface StudyItemProps {
 }
 
 function StudyItem({ study }: StudyItemProps) {
+  const router = useRouter();
+
+  const goStudyDetail = () => {
+    router.push(`/study/${study.study_seq}`);
+  };
+
   return (
-    <Container>
+    <Container onClick={goStudyDetail}>
       <MainInfo>
         <Title>{study.title}</Title>
         <Subtitle>{study.simple_introduce}</Subtitle>
@@ -39,6 +46,11 @@ const Container = styled.div`
   border: 1px solid black;
   padding: 16px;
   position: relative;
+  cursor: pointer;
+  transition: 0.5s;
+  &:hover {
+    box-shadow: 0 3px 12px rgba(7, 7, 7, 0.23);
+  }
 `;
 
 const Title = styled.div`

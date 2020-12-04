@@ -20,7 +20,7 @@ const Home = () => {
         const sortStudy = data.result.study.sort(
           (a, b) => b.study_seq - a.study_seq
         );
-        setStudies(data.result.study as StudyType[]);
+        setStudies(sortStudy);
       } else {
         message.error(data.code);
       }
