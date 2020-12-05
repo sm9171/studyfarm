@@ -2,16 +2,16 @@
 import type { AppProps /*, AppContext */ } from "next/app";
 import Head from "next/head";
 import "antd/dist/antd.css";
-import { RecoilRoot } from "recoil";
+import GlobalStyles from "../styles/GlobalStyles";
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
         <title>스터디팜</title>
       </Head>
-      <RecoilRoot>
-        <Component {...pageProps} />
-      </RecoilRoot>
+      <GlobalStyles />
+      <Component {...pageProps} />
     </>
   );
 }

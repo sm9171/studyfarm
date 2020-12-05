@@ -9,11 +9,10 @@ interface StudyListProp {
 }
 
 function StudyList({ studies }: StudyListProp) {
-  console.log(studies);
   return (
     <Container>
       {studies.map((study) => (
-        <StudyContainer key={study.study_seq}>
+        <StudyContainer key={study.study_seq.toString()}>
           <StudyItem study={study} />
         </StudyContainer>
       ))}
@@ -23,8 +22,8 @@ function StudyList({ studies }: StudyListProp) {
 
 export default StudyList;
 
-const Container = styled.div``;
+const Container = styled.ul``;
 
-const StudyContainer = styled.div`
-  margin-bottom: 8px;
+const StudyContainer = styled.li`
+  margin: 8px 0px;
 `;
