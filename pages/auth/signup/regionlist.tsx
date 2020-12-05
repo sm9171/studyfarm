@@ -9,7 +9,7 @@ function InfoPage() {
   const onSearch = (value: String) => console.log(value);
   return (
     <>
-      <h1>스터디 관심지역 선택</h1>
+      <h1>어떤 스터디를 찾고 있나요?</h1>
       <Search placeholder="input search text" onSearch={onSearch} enterButton />
       <h2>지역 정보는 다른 사람들에게 공유되지 않습니다.</h2>
 

@@ -36,7 +36,7 @@ function InfoPage() {
       <Button onClick={subjectlist}>추가하기<PlusOutlined /></Button>
       <Button type="primary" htmlType="submit" loading={false}>곧 다왔어요!</Button>
       <Modal
-        title="약관 동의"
+        title="스터디 관심분야 선택"
         visible={visible}
         onOk={handleOk}
         onCancel={handleCancel}

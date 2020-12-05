@@ -55,10 +55,10 @@ function SignupPage() {
       setVisible(true);
     } else {
       if (data == null) {//닉네임이 중복일 때
-        return message.error("닉네임이 중복입니다.");
+        return message.error("이미 사용중인 닉네임 입니다.");
       }
       if (data2 == null) {//이메일이 중복일 때
-        return message.error("이메일이 중복입니다.");
+        return message.error("이미 사용중인 이메일 입니다.");
       }
     }
   }, [nickname, email, password]);

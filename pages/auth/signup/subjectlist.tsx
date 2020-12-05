@@ -7,6 +7,8 @@ import Router, { withRouter } from "next/router";
 
 function InfoPage() {
 
+  const [nickname, onChangeNickname] = useInput('');
+  
   return (
     <>
       <h1>어떤 스터디를 찾고 있나요?</h1>
