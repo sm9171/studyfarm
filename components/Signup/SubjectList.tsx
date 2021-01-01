@@ -25,25 +25,26 @@ function SubjectList() {
         <>
             <Search placeholder="관심 스터디를 검색해보세요." onSearch={onSearch} enterButton />
             <Row>
-                <Col span={9}>종류
-                <List
-                        itemLayout="horizontal"
+                <Col span={9}>
+                    <List
+                        header={<div>종류</div>}
+                        bordered
                         dataSource={data}
                         renderItem={item => (
                             <List.Item>
-                                <h3>{item.title}</h3>
+                                {item.title}
                             </List.Item>
                         )}
                     />
-
                 </Col>
-                <Col span={15}>과목
-                <List
-                        itemLayout="horizontal"
+                <Col span={15}>
+                    <List
+                        header={<div>과목</div>}
+                        bordered
                         dataSource={data}
                         renderItem={item => (
                             <List.Item>
-                                <h3>{item.title}</h3>
+                                {item.title}
                             </List.Item>
                         )}
                     />

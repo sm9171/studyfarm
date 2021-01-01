@@ -40,3 +40,12 @@ export const authNickname = async (nickname: string) => {
     return [null, err.response.data];
   }
 };
+
+export const resiterUser = async (email: string, password: string, nickname: string, service_use_agree: boolean) => {
+  try {
+    const res = await api.post<APIResponseType>(`/user`, { email, password, nickname, service_use_agree });
+    return [res.data, null];
+  } catch (err) {
+    return [null, err.response.data];
+  }
+};

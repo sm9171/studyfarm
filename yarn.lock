@@ -4682,11 +4682,6 @@ rc-virtual-list@^3.0.1, rc-virtual-list@^3.2.0:
     rc-resize-observer "^0.2.3"
     rc-util "^5.0.7"
 
-reac@^0.0.0:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/reac/-/reac-0.0.0.tgz#5b8461c365578763af6ee41a69e1fde4e49c390a"
-  integrity sha1-W4Rhw2VXh2OvbuQaaeH95OScOQo=
-
 react-dom@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.1.tgz#1de2560474ec9f0e334285662ede52dbc5426fc6"
@@ -4769,11 +4764,6 @@ readdirp@~3.5.0:
   integrity sha512-cMhu7c/8rdhkHXWsY+osBhfSy0JikwpHK/5+imo+LpeasTF8ouErHrlYkwT0++njiyuDvc7OFY5T3ukvZ8qmFQ==
   dependencies:
     picomatch "^2.2.1"
-
-recoil@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/recoil/-/recoil-0.1.2.tgz#844c612f535826dbe54c977761a67ded16f6d063"
-  integrity sha512-hIRrHlkmW4yITlBFprVYjVPhzPKYrJKoaDrrJtAtbkMeXfXaa/XE5OlyR10n+rNfnKWNToCKb3Z4fo86IGjkzg==
 
 regenerate-unicode-properties@^8.2.0:
   version "8.2.0"
@@ -5300,17 +5290,15 @@ styled-jsx@3.3.0:
     stylis "3.5.4"
     stylis-rule-sheet "0.0.10"
 
-<<<<<<< HEAD
 styled-normalize@^8.0.7:
   version "8.0.7"
   resolved "https://registry.yarnpkg.com/styled-normalize/-/styled-normalize-8.0.7.tgz#e883bff6a0c59a65a39365a4eb9c6cf48372c61f"
   integrity sha512-qQV4O7B9g7ZUnStCwGde7Dc/mcFF/pz0Ha/LL7+j/r6uopf6kJCmmR7jCPQMCBrDkYiQ4xvw1hUoceVJkdaMuQ==
-=======
+
 styled-reset@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/styled-reset/-/styled-reset-4.3.1.tgz#7834a8fa843bb8f57e13396e3ef6c191248aa1ac"
   integrity sha512-H8f2YsjUtJ+oc2y4fB3Jzm/BzByqC15o8DaBvdSMPktT6Q+Dmw74ZbOqhMR7Zzt01p6sN3MN14qqI17kfRCRiQ==
->>>>>>> 998d76956494d6d53604c3827c0f330bb5c5fc5b
 
 stylis-rule-sheet@0.0.10:
   version "0.0.10"

@@ -12,7 +12,7 @@ const Home = () => {
     const [data, error] = await getStudies();
     if (data) {
       if (data.code === 200) {
-        setStudies(data.result.study as StudyType[]);
+        setStudies(data.result.content as StudyType[]);
       } else {
         message.error(data.code);
       }

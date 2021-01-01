@@ -17,7 +17,7 @@ const Home = () => {
     const [data, error] = await getStudies();
     if (data) {
       if (data.code === 200) {
-        const sortStudy = data.result.study.sort(
+        const sortStudy = data.result.content.sort(
           (a, b) => b.study_seq - a.study_seq
         );
         setStudies(sortStudy);

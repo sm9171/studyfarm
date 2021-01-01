@@ -23,7 +23,9 @@ function InfoPage() {
   const subjectlist = () => {
     setVisible(true);
   }
-
+  const handleAddInfo = () => {
+    Router.push('/auth/signup/addinfo');
+  };
   return (
     <>
       <h1>어떤 스터디를 찾고 있나요?</h1>
@@ -34,7 +36,7 @@ function InfoPage() {
       <Button onClick={regionlist}>추가하기<PlusOutlined /></Button>
       <h3>관심 스터디</h3>
       <Button onClick={subjectlist}>추가하기<PlusOutlined /></Button>
-      <Button type="primary" htmlType="submit" loading={false}>곧 다왔어요!</Button>
+      <Button type="primary" htmlType="submit" loading={false} onClick={handleAddInfo}>곧 다왔어요!</Button>
       <Modal
         title="스터디 관심분야 선택"
         visible={visible}

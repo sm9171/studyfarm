@@ -15,16 +15,16 @@ export interface StudyType {
   title: string;
   users_seq: number;
   email: string;
-  nickname: string;
-  age: number;
-  gender: string;
-  interesting: InterestingType[];
-  simple_introduce: string;
-  profile: string;
-  user_city_info: UserCityInfoType[];
   user_created_at: string;
   user_updated_at: string;
-  user_active: boolean;
+  age: number;
+  nickname: string;
+  user_city_info: UserCityInfoType[];
+  gender: string;
+  interesting: InterestingType[];
+  born_date: string;
+  simple_introduce: string;
+  profile: string;
   study_limit: number;
   week: string;
   week_type: number;
@@ -32,6 +32,7 @@ export interface StudyType {
   city: number;
   state_name: string;
   city_name: string;
+  user_active: boolean;
   full_address: string;
   contents: string;
   category: number;
@@ -68,7 +69,7 @@ export interface PageInfoType {
 }
 
 export interface StudiesResultType {
-  study: StudyType[];
+  content: StudyType[];
   links: LinksType;
   page_info: PageInfoType;
 }

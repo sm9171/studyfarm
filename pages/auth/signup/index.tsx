@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Input, Button, Form, message, Modal } from 'antd';
 
 import useInput from '../../../hooks/useInput';
-import { authNickname, authEmail } from '../../../lib/api/auth';
+import { authNickname, authEmail, resiterUser } from '../../../lib/api/auth';
 import Terms from "../../../components/Signup/Terms";
 
 function SignupPage() {
@@ -14,11 +14,15 @@ function SignupPage() {
   const [nickname, onChangeNickname] = useInput('');
   const [password, onChangePassword] = useInput('');
   const [visible, setVisible] = useState(false);
+  const [useAgree, setUseAgree] = useState(false);
 
-
-  const handleOk = () => { //모달 창 ok버튼
-    setVisible(false);
-    Router.push('/auth/signup/emailauth');
+  const handleOk = async () => { //모달 창 ok버튼
+    const [data, error] = await resiterUser(email, password, nickname, true);
+    if (data) {
+      setVisible(false);
+      console.log(data.result.users_seq);
+      Router.push('/auth/signup/emailauth');
+    }
   };
 
   const handleCancel = () => { //모달 창 cancel버튼
@@ -66,15 +70,15 @@ function SignupPage() {
   return (
     <>
       <Form onFinish={onSubmit} style={{ padding: '10px' }}>
-        <h1>이메일로 시작하기</h1>
-        <h2>입력하신 메일로 본인인증을 위한 인증번호가 전송됩니다.<br />비밀번호는 1번만 입력하니 정확히 입력해주세요.</h2>
-        <h3>이메일</h3>
-        <Input name="user-email" type="email" value={email} onChange={onChangeEmail} />
-        <h3>비밀번호</h3>
-        <Input name="user-password" type="password" value={password} onChange={onChangePassword} />
-        <h3>닉네임</h3>
-        <Input name="user-nickname" type="text" value={nickname} onChange={onChangeNickname} />
-        <Button type="primary" htmlType="submit" loading={loading}>다음</Button>
+        <TITLE>이메일로 시작하기</TITLE>
+        <SUBTITLE>입력하신 메일로 본인인증을 위한 인증번호가 전송됩니다.<br />비밀번호는 1번만 입력하니 정확히 입력해주세요.</SUBTITLE>
+        <EMAIL>이메일</EMAIL>
+        <EMAILINPUT name="user-email" type="email" value={email} onChange={onChangeEmail} />
+        <PASSWORD>비밀번호</PASSWORD>
+        <PASSWORDINPUT name="user-password" type="password" value={password} onChange={onChangePassword} />
+        <NICKNAME>닉네임</NICKNAME>
+        <NICKNAMEINPUT name="user-nickname" type="text" value={nickname} onChange={onChangeNickname} />
+        <AUTHBUTTON type="primary" htmlType="submit" loading={loading}>다음</AUTHBUTTON>
         <Modal
           title="약관 동의"
           visible={visible}
@@ -89,3 +93,128 @@ function SignupPage() {
 }
 
 export default SignupPage;
+
+const TITLE = styled.div`
+position: absolute;
+width: 250px;
+height: 36px;
+left: 20px;
+top: 20px;
+
+font-family: Noto Sans KR;
+font-style: normal;
+font-weight: bold;
+font-size: 26px;
+line-height: 36px;
+color: #413D3D;
+`
+const SUBTITLE = styled.div`
+position: absolute;
+width: 330px;
+height: 48px;
+left: 20px;
+top: 146px;
+
+font-family: Noto Sans KR;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 24px;
+color: #999999;
+`
+
+const EMAIL = styled.div`
+position: absolute;
+width: 100px;
+height: 24px;
+left: 19px;
+top: 228px;
+
+font-family: Noto Sans KR;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 24px;
+
+color: #000000;
+
+opacity: 0.5;
+`
+const EMAILINPUT = styled(Input)`
+position: absolute;
+width: 335px;
+height: 48px;
+left: 20px;
+top: 257px;
+
+border: 1px solid #E7E7E7;
+box-sizing: border-box;
+border-radius: 6px;
+`
+
+const PASSWORD = styled.div`
+position: absolute;
+width: 100px;
+height: 24px;
+left: 20px;
+top: 340px;
+
+font-family: Noto Sans KR;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 24px;
+
+color: #000000;
+
+opacity: 0.5;
+`
+const PASSWORDINPUT = styled(Input)`
+position: absolute;
+width: 335px;
+height: 48px;
+left: 21px;
+top: 369px;
+
+border: 1px solid #E7E7E7;
+box-sizing: border-box;
+border-radius: 6px;
+`
+const NICKNAME = styled.div`
+position: absolute;
+width: 100px;
+height: 24px;
+left: 19px;
+top: 481px;
+
+font-family: Noto Sans KR;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 24px;
+
+color: #000000;
+
+opacity: 0.5;
+`
+const NICKNAMEINPUT = styled(Input)`
+position: absolute;
+width: 335px;
+height: 48px;
+left: 20px;
+top: 510px;
+
+border: 1px solid #E7E7E7;
+box-sizing: border-box;
+border-radius: 6px;
+`
+const AUTHBUTTON = styled(Button)`
+position: absolute;
+width: 355px;
+height: 49px;
+left: 10px;
+top: 650px;
+
+background: #FF7663;
+border-radius: 8px;
+`
