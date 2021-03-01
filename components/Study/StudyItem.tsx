@@ -22,13 +22,12 @@ function StudyItem({ study }: StudyItemProps) {
         <Subtitle>{study.simple_introduce}</Subtitle>
       </MainInfo>
       <SubInfo>
-        <AiOutlineUser />
-        <Nickname>{study.nickname}</Nickname>
         <Members>
-          {study.users.length}/{study.study_limit}
+          <AiOutlineUser />
+          현재/{study.study_limit}
         </Members>
         <AiOutlineCalendar />
-        <StudyTime>매주, 토</StudyTime>
+        <StudyTime>협의예정</StudyTime>
       </SubInfo>
       <Tags>
         {study.interesting.map((item) => (
@@ -54,22 +53,24 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 16px;
   color: black;
 `;
 
 const Subtitle = styled.div`
-  font-size: 14px;
+  font-size: 12px;
   color: gray;
 `;
 
 const Nickname = styled.div`
-  font-weight: 600;
   margin-right: 8px;
 `;
 
 const Members = styled.div`
-  margin-right: 8px;
+  position: absolute;
+  top: 40px;
+  right: 16px;
 `;
 
 const Tags = styled.div`
@@ -77,7 +78,7 @@ const Tags = styled.div`
 `;
 
 const Tag = styled.div`
-  margin-right: 4px;
+  margin-right: 12px;
 `;
 
 const StudyTime = styled.div``;

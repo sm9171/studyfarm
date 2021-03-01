@@ -1,6 +1,8 @@
 export interface InterestingType {
+  code: number;
   name: string;
-  skill_level: string;
+  skill_level: number;
+  parent_code: number;
 }
 
 export interface UserCityInfoType {
@@ -43,7 +45,6 @@ export interface StudyType {
   end_yn: boolean;
   study_day: number;
   views: number;
-  users: any[];
   dateFormat: string;
   study_created_at_str: string;
   study_updated_at_str: string;

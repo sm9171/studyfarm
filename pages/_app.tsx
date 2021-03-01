@@ -8,7 +8,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>스터디팜</title>
+        <script
+          type="text/javascript"
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=fce3d6abaad37cb48408011ca4ad201b&libraries=services`}
+        />
+
+        <title>스펀지</title>
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />
